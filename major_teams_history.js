@@ -17,6 +17,12 @@ async function get_major_teams() {
     await HLTV.getEvent({id: 3564}).then((res) => {
         var teams = res['teams'];
         for (key in teams) {
+            if (teams[key]['id'] == 9215) {
+                result.push(6137);
+            };
+            if (teams[key]['id'] == 9183) {
+                result.push(7467);
+            };
             result.push(teams[key]['id']);
         }
     });
