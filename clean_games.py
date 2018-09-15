@@ -27,6 +27,9 @@ for team in last_year.team1.value_counts().index:
 mtg_dict = {k:[g[j] for g in games] for j, k in enumerate(df.columns)}
 
 
-#combine both dicts
-pd.concat([last_year_bad_opp,pd.DataFrame(mtg_dict)]).to_csv("data/cleaned_games.csv", index=False)
+name = "data/cleaned_games.csv"
 
+#combine both dicts
+pd.concat([last_year_bad_opp,pd.DataFrame(mtg_dict)]).to_csv(name, index=False)
+
+print(f"saved to {name}")
